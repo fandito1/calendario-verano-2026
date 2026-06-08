@@ -15,6 +15,7 @@
     --gray-light: #E7E6E6;
     --font: 'Libre Franklin', sans-serif;
   }
+  html, body { overflow-x: hidden; }
   body { font-family: var(--font); background: var(--white); color: var(--black); }
 
   /* ── HEADER ── */
@@ -287,7 +288,7 @@
   .cal-wrapper {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 28px 48px 60px;
+    padding: 28px 48px 0;
   }
   .month-panel { display: none; }
   .month-panel.active { display: block; }
@@ -655,6 +656,7 @@
     background: var(--yellow);
     padding: 36px 40px;
     margin-top: 40px;
+    margin-bottom: 0;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -709,7 +711,7 @@
     .filter-wrap { padding: 8px 0; border-top: 1px solid #eee; width: 100%; }
     .filter-select { max-width: 100%; width: 100%; }
     .cat-filter-bar { padding: 10px 12px; }
-    .cal-wrapper { padding: 16px 12px 40px; }
+    .cal-wrapper { padding: 16px 12px 0; }
     .cal-week { min-height: 100px; }
     .cal-day { min-height: 100px; padding: 5px 4px; }
     .entry-title { font-size: 9px; -webkit-line-clamp: 2; }
