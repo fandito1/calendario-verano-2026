@@ -721,21 +721,30 @@
     .cal-day { min-height: 90px; padding: 5px 4px; }
     .entry-title { font-size: 9px; -webkit-line-clamp: 2; }
     .cta-section { padding: 20px 16px; flex-direction: column; align-items: flex-start; }
-    .modal { max-width: 100%; margin: 0; align-self: flex-end; border-radius: 16px 16px 0 0; max-height: 85vh; }
+    /* Modal como bottom sheet en mobile */
     .modal-overlay { padding: 0; align-items: flex-end; }
+    .modal { max-width: 100%; width: 100%; margin: 0; align-self: flex-end; border-radius: 16px 16px 0 0; max-height: 88vh; overflow: hidden; }
+    /* Quitar sábado y domingo — grid 5 columnas */
+    .day-headers { grid-template-columns: repeat(5, minmax(0,1fr)); }
+    .cal-week { grid-template-columns: repeat(5, minmax(0,1fr)); min-height: 90px; }
+    .day-header.weekend { display: none; }
+    .cal-day.weekend { display: none; }
   }
   @media (max-width: 480px) {
     .cal-header h1 { font-size: clamp(22px, 6vw, 38px); }
     .cal-header-sub { font-size: 12px; }
     .stat-item .num { font-size: 17px; }
     .stat-item .lbl { font-size: 9px; }
-    .cal-week { min-height: 72px; }
-    .cal-day { min-height: 72px; padding: 4px 3px; }
-    .entry-title { font-size: 8px; -webkit-line-clamp: 2; }
+    .cal-week { min-height: 80px; }
+    .cal-day { min-height: 80px; padding: 4px 4px; }
+    .entry-title { font-size: 9px; -webkit-line-clamp: 2; }
     .entry-cat-tag { display: none; }
     .day-header { font-size: 9px; padding: 8px 2px; letter-spacing: 0.04em; }
     .tab-btn { padding: 10px 12px; font-size: 10px; }
     .cat-pill { font-size: 10px; padding: 5px 11px; }
+    .modal-body { padding: 16px; }
+    .modal-footer { padding: 12px 16px; flex-direction: column; }
+    .modal-presupuesto { font-size: 22px; }
   }
 </style>
 </head>
