@@ -1217,7 +1217,11 @@ setTimeout(initCalendar, 300);
 <script>
 // Send height to parent iframe
 function reportHeight() {
-  var h = document.documentElement.scrollHeight || document.body.scrollHeight;
+  // Usar el bottom del último elemento visible para evitar espacio vacío extra
+  var lastEl = document.querySelector('.cta-section');
+  var h = lastEl
+    ? Math.ceil(lastEl.getBoundingClientRect().bottom + window.scrollY) + 16
+    : (document.documentElement.scrollHeight || document.body.scrollHeight);
   window.parent.postMessage({ type: 'calHeight', height: h }, '*');
 }
 // Report on load and after any interaction
