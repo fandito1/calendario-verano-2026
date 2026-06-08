@@ -1210,5 +1210,24 @@ window.switchTab = function(month, btn) {
 };
 </script>
 
+<script>
+// Move modals to document.body so position:fixed works inside Elementor containers
+(function() {
+  function moveModals() {
+    ['modal-entry', 'modal-day', 'form-modal'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.parentElement !== document.body) {
+        document.body.appendChild(el);
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', moveModals);
+  } else {
+    moveModals();
+  }
+})();
+</script>
+
 </body>
 </html>
